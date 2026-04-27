@@ -46,17 +46,42 @@ function toggleVideoSound(video) {
   video.muted = !video.muted;
   video.play();
 }
+
+/* MOBILE SWIPE */
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener("touchstart", function(e) {
+  touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener("touchend", function(e) {
+  touchEndX = e.changedTouches[0].screenX;
+  handleSwipe();
+});
+
+function handleSwipe() {
+  const swipeDistance = touchEndX - touchStartX;
+
+  if (swipeDistance < -50) {
+    nextSlide();
+  }
+
+  if (swipeDistance > 50) {
+    prevSlide();
+  }
+}
+
+/* CUSTOM CURSOR DESKTOP ONLY */
 const cursor = document.querySelector(".custom-cursor");
 
-if (cursor) {
+if (cursor && window.innerWidth > 768) {
   document.addEventListener("mousemove", function(e) {
     cursor.style.left = e.clientX + "px";
     cursor.style.top = e.clientY + "px";
   });
 
-  const hoverTargets = document.querySelectorAll("a, button, video");
-
-  hoverTargets.forEach(el => {
+  document.querySelectorAll("a, button, video").forEach(el => {
     el.addEventListener("mouseenter", () => {
       cursor.classList.add("hover");
     });
@@ -66,4 +91,5 @@ if (cursor) {
     });
   });
 }
+
 showSlide(0);
