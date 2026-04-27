@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Films - Max Lancaster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <div class="slider-wrap">
+
+    <button class="side-button left-button" onclick="prevSlide()"></button>
+
+    <div class="slider">
+
+      <div class="slide active">
+        <div class="slide-inner">
+          <video class="main-media" autoplay muted loop playsinline onclick="toggleVideoSound(this)">
+            <source src="videos/film1.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Shitmas (Art Film)</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <video class="main-media" autoplay muted loop playsinline onclick="toggleVideoSound(this)">
+            <source src="videos/film2.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Gimmie Dat! (Art Film)</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <video class="main-media" autoplay muted loop playsinline onclick="toggleVideoSound(this)">
+            <source src="videos/film3.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Holloway Road (Music Video)</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <video class="main-media" autoplay muted loop playsinline onclick="toggleVideoSound(this)">
+            <source src="videos/film4.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Yuqt (Pitch Film)</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="side-button right-button" onclick="nextSlide()"></button>
+
+  </div>
+
+  <div class="nav">
+    <a href="index.html">Max Lancaster</a>
+    <a href="photography.html">Photography</a>
+    <a href="films.html" class="active">Films</a>
+    <a href="info.html">Info</a>
+  </div>
+
+</div>
+
+<div class="custom-cursor"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

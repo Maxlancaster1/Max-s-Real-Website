@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Max Lancaster</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="slider-wrap">
+
+    <button class="side-button left-button" onclick="prevSlide()"></button>
+
+    <div class="slider">
+
+      <div class="slide active">
+        <div class="slide-inner">
+          <video class="main-media" autoplay muted loop playsinline onclick="toggleVideoSound(this)">
+            <source src="videos/home.mp4" type="video/mp4">
+          </video>
+          <div class="caption">Levi Nice – Holloway Road</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <img src="images/home-slide-1.jpg" class="main-media">
+          <div class="caption">Dyson - Hair</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <img src="images/home-slide-2.jpg" class="main-media">
+          <div class="caption">Life Between Ports - It's Nice That</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <img src="images/home-slide-3.jpg" class="main-media">
+          <div class="caption">Poets & Punks</div>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div class="slide-inner">
+          <img src="images/home-slide-4.jpg" class="main-media">
+          <div class="caption">The Past Is Always Ahead - Office</div>
+        </div>
+      </div>
+
+    </div>
+
+    <button class="side-button right-button" onclick="nextSlide()"></button>
+
+  </div>
+
+  <div class="nav">
+    <a href="index.html" class="active">Max Lancaster</a>
+    <a href="photography.html">Photography</a>
+    <a href="films.html">Films</a>
+    <a href="info.html">Info</a>
+  </div>
+
+</div>
+<div class="custom-cursor"></div>
+<script src="script.js"></script>
+</body>
+</html>
