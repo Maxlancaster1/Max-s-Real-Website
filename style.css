@@ -53,6 +53,24 @@ body {
   transform-origin: center;
 }
 
+.image-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; /* A slightly wider gap looks better on desktop */
+  width: 100%;
+  max-width: 860px; /* Matches your desktop slider width */
+  margin: 0 auto;
+}
+
+.image-row img {
+  max-width: 31%; /* Ensures all 3 fit nicely side-by-side */
+  height: auto;
+  max-height: 520px; /* Matches your desktop .main-media constraint */
+  object-fit: contain;
+}
+
 /* captions */
 .caption {
   display: block;
