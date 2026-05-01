@@ -203,117 +203,114 @@ html, body, * {
   cursor: none !important;
 }
 
+
 /* MOBILE CONTROLS */
 @media only screen and (max-width: 768px) {
-  
-  /* 1. RESET THE BODY */
+
+  /* 1. FORCE THE PAGE TO BE THE FULL HEIGHT OF THE PHONE */
   html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    overflow: hidden; /* Prevents accidental bouncing/scrolling */
   }
- /* 2. FORCE FULL SCREEN HEIGHT */
-  /* We make the wrapper and the slider take up the entire screen */
+
+  .container {
+    height: 100dvh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 2. OVERRIDE DESKTOP MARGINS & SIZES */
   .slider-wrap, 
   .slider {
     width: 100vw !important;
     height: 100dvh !important; 
-    margin: 0 !important;
+    margin: 0 !important; /* This kills that 140px desktop margin */
     padding: 0 !important;
-    position: relative;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
   }
-/* 3. MAKE THE SLIDE A CENTERING BOX */
+
+  /* 3. FIX THE DISPLAY CONFLICT */
   .slide {
+    display: none !important; /* Hide inactive slides */
     width: 100% !important;
     height: 100% !important;
-    /* Flex is key here to center the .slide-inner */
+  }
+
+  /* When a slide is active, it MUST be flex to center content */
+  .slide.active {
     display: flex !important; 
     align-items: center !important;
     justify-content: center !important;
   }
 
- .slide-inner {
-    width: 90vw !important; /* This creates your white side borders */
+  .slide-inner {
+    width: 90vw !important; 
+    height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-padding-bottom: 60px !important; 
+    /* Pushes content up slightly to leave room for the fixed nav */
+    padding-bottom: 80px !important; 
     box-sizing: border-box !important;
   }
 
-/* 4. CONSTRAIN THE MEDIA */
+  /* 4. MEDIA SCALING */
   .main-media {
     max-width: 100% !important;
-    /* Prevent the image from being taller than 65% of the screen */
-    max-height: 65dvh !important; 
+    max-height: 60dvh !important; 
     width: auto !important;
     height: auto !important;
     object-fit: contain !important;
+    transform: scale(1) !important; /* Removes the 1.15 scale from desktop */
   }
 
   .caption {
     margin-top: 15px !important;
     font-size: 10px !important;
     text-align: center !important;
-    width: 100% !important;
   }
 
-  /* 5. FIX THE IMAGE ROW (The Photography Slide) */
+  /* 5. IMAGE ROW (The 3-image slide) */
   .image-row {
     display: flex !important;
     flex-direction: row !important;
-    justify-content: center !important;
-    align-items: center !important;
-    gap: 8px !important;
+    gap: 5px !important;
     width: 100% !important;
+    justify-content: center !important;
   }
 
   .image-row img {
     max-width: 31% !important;
     height: auto !important;
-    object-fit: contain !important;
   }
 
-  .side-button { display: none !important; }
-
-  .info-page {
-    min-height: 100vh !important;
-    min-height: 100dvh !important;
-    width: 90vw !important;
-    margin: 0 auto !important;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    padding-bottom: 80px !important; 
+  /* 6. HIDE ELEMENTS */
+  .side-button, .custom-cursor {
+    display: none !important;
   }
 
-  .info-text {
-    width: 100% !important;
-    margin: 0 auto !important;
-    text-align: center !important;
-  }
-
-  /* 2. THE FIXED NAV (Requires HTML fix above to work properly) */
+  /* 7. NAVIGATION FIXED TO BOTTOM */
   .nav, .info-nav {
     position: fixed !important;
     bottom: 0 !important;
     left: 0 !important;
     width: 100vw !important;
-    height: 60px !important; /* Force a strict height */
-    margin: 0 !important;
-    padding: 0 !important;
+    height: 70px !important;
+    background: #fff !important;
     display: flex !important;
     justify-content: center !important;
-    align-items: center !important; /* Perfectly center text vertically in the bar */
-    gap: 25px !important;
-    z-index: 999999 !important;
-    background: #fff !important; 
+    align-items: center !important;
+    gap: 20px !important;
+    z-index: 9999;
   }
 
-  .nav a, .info-nav a { font-size: 12px !important; }
+  .nav a { font-size: 12px !important; }
 }
