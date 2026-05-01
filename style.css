@@ -199,17 +199,24 @@ html, body, * {
     cursor: auto !important;
   }
 
-  /* IMAGE POSITION + SIZE */
+  /* PREVENT WEIRD HORIZONTAL SCROLLING */
+  body {
+    overflow-x: hidden;
+  }
+
+  /* MAKE EVERYTHING CENTRAL WITH A SMALL WHITE BORDER */
   .slider-wrap {
-    width: 100vw !important;
-    /* controls distance from top */
-    margin-top: 120px !important;
+    width: 90vw !important; /* 90% width creates the 5% white borders */
+    height: 100vh !important; 
+    margin: 0 auto !important; /* Centers the wrap horizontally */
+    display: flex !important;
+    align-items: center !important; /* Centers content vertically */
   }
 
   .slider,
   .slide,
   .slide-inner {
-    width: 100vw !important;
+    width: 100% !important;
     height: auto !important;
     min-height: auto !important;
   }
@@ -222,10 +229,8 @@ html, body, * {
   }
 
   .main-media {
-    /* controls image width */
-    max-width: 90vw !important;
-    /* controls image height */
-    max-height: 58vh !important;
+    max-width: 100% !important;
+    max-height: 65vh !important; /* Leaves breathing room for caption/nav */
     width: auto !important;
     height: auto !important;
     display: block !important;
@@ -235,9 +240,10 @@ html, body, * {
 
   /* CAPTION */
   .caption {
-    margin-top: 8px !important;
+    margin-top: 15px !important;
     font-size: 10px !important;
     text-align: center !important;
+    width: 100% !important;
   }
 
   /* HIDE DESKTOP SLIDE DOTS/BUTTONS ON MOBILE */
@@ -245,19 +251,38 @@ html, body, * {
     display: none !important;
   }
 
-  /* NAVIGATION */
-  .nav {
-    width: 90vw !important;
-    /* controls nav position */
-    margin: 70px auto 80px auto !important;
+  /* INFO PAGE CENTRALIZATION */
+  .info-page {
+    min-height: 100vh !important;
+    width: 90vw !important; /* Matches the 90vw image border */
+    margin: 0 auto !important; 
     display: flex !important;
-    justify-content: flex-start !important;
-    /* controls distance between nav words */
-    gap: 28px !important;
+    flex-direction: column !important;
+    justify-content: center !important;
   }
 
-  .nav a {
-    /* controls nav font size */
-    font-size: 13px !important;
+  .info-text {
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
   }
-}
+
+  /* FIX NAVIGATION TO THE BOTTOM */
+  .nav, .info-nav {
+    position: fixed !important;
+    bottom: 30px !important; /* Distance from the very bottom of the screen */
+    left: 0 !important;
+    width: 100vw !important;
+    margin: 0 !important;
+    display: flex !important;
+    justify-content: center !important; /* Centers the words perfectly */
+    gap: 25px !important; /* Space between words */
+    z-index: 9999 !important;
+    
+    /* Adds a solid background so text doesn't clash if an image scrolls behind it */
+    background: #fff !important; 
+    padding-top: 10px !important;
+  }
+
+  .nav a, .info-nav a {
+    font-size:
