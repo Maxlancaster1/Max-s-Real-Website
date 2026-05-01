@@ -237,15 +237,19 @@ html, body, * {
   }
 
 .info-text {
-    width: 85vw !important; /* Slightly tighter for better readability */
-    margin: 0 auto !important; /* Removes that 300px desktop margin */
-    padding-bottom: 80px !important; /* Space so it doesn't hit the nav */
+    width: 85vw !important; 
+    max-width: 100% !important;
+    margin: 0 !important; /* Removes the 300px desktop top-margin */
+    padding: 0 !important; /* Removes the padding-bottom that was pushing it up */
     text-align: center !important;
+margin-top: -30px !important;
   }
 
 .info-text p {
-    font-size: 13px !important; /* Slightly smaller for mobile screens */
-    line-height: 1.4 !important;
+    font-size: 13px !important;
+    line-height: 1.5 !important;
+    margin: 0 auto 15px auto !important; /* Centers the paragraph lines */
+    max-width: 100% !important; /* Overrides the desktop 690px width */
   }
 
 .nav, .info-nav {
