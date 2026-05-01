@@ -49,9 +49,6 @@ body {
   max-width: 100%;
   object-fit: contain;
   display: block;
-}
-
-.main-media {
   transform: scale(1.15);
   transform-origin: center;
 }
@@ -98,18 +95,15 @@ body {
   position: fixed;
   top: 50%;
   transform: translateY(-50%);
-
   width: 8px;
   height: 8px;
   min-width: 8px;
   min-height: 8px;
-
   background: #000;
   border-radius: 50%;
   border: none;
   padding: 0;
   line-height: 0;
-
   z-index: 999;
   display: block;
 }
@@ -121,8 +115,8 @@ body {
 .right-button {
   left: calc(50% + 490px);
 }
-/* VIDEO MUTE BUTTON */
 
+/* VIDEO MUTE BUTTON */
 video {
   cursor: pointer;
 }
@@ -134,17 +128,17 @@ video {
   flex-direction: column;
   justify-content: center;
 }
+
 .info-text {
   width: 699px;
   max-width: 90vw;
   margin: 300px auto 0 auto;
   text-align: center;
 }
-}
 
 .info-text p {
   margin: 0 auto 20px auto;
-  max-width: 690px; /* keeps text nicely “fitted” */
+  max-width: 690px;
   font-size: 14px;
   line-height: 1.25;
   font-weight: 400;
@@ -159,6 +153,7 @@ video {
   color: #222;
   text-decoration: underline;
 }
+
 .info-nav {
   width: 748px;
   margin: 239px auto 60px auto;
@@ -169,18 +164,15 @@ video {
 
 .custom-cursor {
   position: fixed;
-transition: width 0.15s ease, height 0.15s ease, transform 0.1s ease;
+  transition: width 0.15s ease, height 0.15s ease, transform 0.1s ease;
   width: 15px;
   height: 15px;
   background: #000;
   border-radius: 50%;
   pointer-events: none;
-
   /* 👇 offset so mouse is NOT in the center */
   transform: translate(-20%, -20%);
-
   z-index: 999999;
-  transition: width 0.15s ease, height 0.15s ease;
 }
 
 /* 👇 grow on hover */
@@ -188,6 +180,7 @@ transition: width 0.15s ease, height 0.15s ease, transform 0.1s ease;
   width: 20px;
   height: 20px;
 }
+
 html, body, * {
   cursor: none !important;
 }
@@ -209,9 +202,8 @@ html, body, * {
   /* IMAGE POSITION + SIZE */
   .slider-wrap {
     width: 100vw !important;
-
     /* controls distance from top */
-    margin-top: 500px !important;
+    margin-top: 120px !important;
   }
 
   .slider,
@@ -232,13 +224,10 @@ html, body, * {
   .main-media {
     /* controls image width */
     max-width: 90vw !important;
-
     /* controls image height */
     max-height: 58vh !important;
-
     width: auto !important;
     height: auto !important;
-
     display: block !important;
     margin: 0 auto !important;
     object-fit: contain !important;
@@ -259,13 +248,10 @@ html, body, * {
   /* NAVIGATION */
   .nav {
     width: 90vw !important;
-
     /* controls nav position */
     margin: 70px auto 80px auto !important;
-
     display: flex !important;
     justify-content: flex-start !important;
-
     /* controls distance between nav words */
     gap: 28px !important;
   }
