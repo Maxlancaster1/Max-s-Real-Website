@@ -173,8 +173,8 @@ video {
 }
 
 .info-nav {
-  width: 748px;
-  margin: 239px auto 60px auto;
+  width: 747px;
+  margin: 268px auto 60px auto;
   display: flex;
   justify-content: flex-start;
   gap: 40px;
