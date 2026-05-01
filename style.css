@@ -193,7 +193,8 @@ html, body, * {
 }
 
 /* MOBILE */
-@media (max-width: 768px) {
+/* MOBILE FIX */
+@media only screen and (max-width: 768px) {
 
   html, body, * {
     cursor: auto !important;
@@ -203,49 +204,85 @@ html, body, * {
     display: none !important;
   }
 
-  .slider-wrap {
-    width: 100vw;
-    margin: 70px auto 0 auto;
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
   }
 
-  .slider {
-    width: 100vw;
-    height: auto;
-  }
-
-  .slide-inner {
-    width: 100vw;
-    height: auto;
-    min-height: auto;
-  }
-
-  .main-media {
-    width: auto;
-    max-width: 86vw;
-    max-height: 62vh;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-  }
-
-  .caption {
-    font-size: 10px;
-    margin-top: 8px;
+  .container {
+    width: 100%;
     text-align: center;
   }
 
+  .slider-wrap {
+    width: 100vw !important;
+    margin: 90px auto 0 auto !important;
+    position: relative;
+  }
+
+  .slider {
+    width: 100vw !important;
+    height: auto !important;
+  }
+
+  .slide {
+    width: 100vw !important;
+    height: auto !important;
+  }
+
+  .slide-inner {
+    width: 100vw !important;
+    height: auto !important;
+    min-height: auto !important;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .main-media {
+    width: auto !important;
+    height: auto !important;
+    max-width: 88vw !important;
+    max-height: 68vh !important;
+    object-fit: contain !important;
+    display: block !important;
+    margin: 0 auto !important;
+  }
+
+  .image-row {
+    width: 88vw !important;
+    display: flex !important;
+    gap: 10px !important;
+  }
+
+  .image-row img {
+    max-width: calc((88vw - 20px) / 3) !important;
+    max-height: 60vh !important;
+    width: auto !important;
+    height: auto !important;
+  }
+
+  .caption {
+    font-size: 10px !important;
+    margin-top: 8px !important;
+    text-align: center !important;
+  }
+
   .nav {
-    width: 86vw;
-    margin: 28px auto 60px auto;
-    gap: 24px;
-    font-size: 11px;
+    width: 88vw !important;
+    margin: 28px auto 60px auto !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    gap: 22px !important;
   }
 
   .nav a {
-    font-size: 11px;
+    font-size: 11px !important;
   }
 
   .side-button {
-    display: none;
+    display: none !important;
   }
 }
