@@ -223,6 +223,45 @@ html, body, * {
     justify-content: center;
     align-items: center;
   }
+.info-page {
+    /* Force full height and centering, just like the slider */
+    min-height: 100dvh !important;
+    width: 100vw !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+  }
+
+.info-text {
+    width: 85vw !important; /* Slightly tighter for better readability */
+    margin: 0 auto !important; /* Removes that 300px desktop margin */
+    padding-bottom: 80px !important; /* Space so it doesn't hit the nav */
+    text-align: center !important;
+  }
+
+.info-text p {
+    font-size: 13px !important; /* Slightly smaller for mobile screens */
+    line-height: 1.4 !important;
+  }
+
+.nav, .info-nav {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 75px !important; /* Strict height for consistency */
+    background: #fff !important; 
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 20px !important; /* Same gap as photography page */
+    margin: 0 !important;
+    z-index: 99999;
+  }
 
   /* 2. OVERRIDE DESKTOP MARGINS & SIZES */
   .slider-wrap, 
@@ -234,6 +273,12 @@ html, body, * {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+  }
+
+.nav a, .info-nav a {
+    font-size: 12px !important;
+    text-decoration: none !important;
+    white-space: nowrap; /* Prevents names from breaking into two lines */
   }
 
   /* 3. FIX THE DISPLAY CONFLICT */
@@ -293,7 +338,7 @@ html, body, * {
   }
 
   /* 6. HIDE ELEMENTS */
-  .side-button, .custom-cursor {
+ .side-button {
     display: none !important;
   }
 
