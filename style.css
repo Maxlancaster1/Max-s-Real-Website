@@ -205,12 +205,12 @@ html, body, * {
   }
 
   /* MAKE EVERYTHING CENTRAL WITH A SMALL WHITE BORDER */
-  .slider-wrap {
-    width: 90vw !important; /* 90% width creates the 5% white borders */
-    height: 100vh !important; 
-    margin: 0 auto !important; /* Centers the wrap horizontally */
+.slider-wrap {
+    width: 90vw !important; 
+    height: 85vh !important; /* Changed from 100vh */
+    margin: 0 auto !important; 
     display: flex !important;
-    align-items: center !important; /* Centers content vertically */
+    align-items: center !important; 
   }
 
   .slider,
@@ -235,6 +235,19 @@ html, body, * {
     height: auto !important;
     display: block !important;
     margin: 0 auto !important;
+    object-fit: contain !important;
+  }
+.image-row {
+    display: flex !important;
+    flex-direction: row !important; /* Keeps them side-by-side */
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px !important; /* Small gap between the images */
+    width: 100% !important;
+  }
+.image-row img {
+    max-width: 31% !important; /* Ensures 3 images fit perfectly horizontally */
+    height: auto !important;
     object-fit: contain !important;
   }
 
