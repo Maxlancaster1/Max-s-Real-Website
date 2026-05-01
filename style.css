@@ -205,47 +205,54 @@ html, body, * {
 
 /* MOBILE CONTROLS */
 @media only screen and (max-width: 768px) {
-
-  .custom-cursor { display: none !important; opacity: 0 !important; visibility: hidden !important; }
-  html, body, * { cursor: auto !important; }
-  body { overflow-x: hidden; }
-
-  /* 1. BRUTE-FORCE CENTERING */
-  .slider-wrap, .slider {
+  
+  /* 1. RESET THE BODY */
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+ /* 2. FORCE FULL SCREEN HEIGHT */
+  /* We make the wrapper and the slider take up the entire screen */
+  .slider-wrap, 
+  .slider {
     width: 100vw !important;
-    height: 100vh !important; /* Fallback for older phones */
-    height: 100dvh !important; /* Dynamic height for modern phones */
+    height: 100dvh !important; 
     margin: 0 !important;
     padding: 0 !important;
+    position: relative;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
-
-  /* Make the slide itself a full-screen centering box */
+/* 3. MAKE THE SLIDE A CENTERING BOX */
   .slide {
     width: 100% !important;
     height: 100% !important;
-    display: flex !important;
-    align-items: center !important; /* Centers perfectly top-to-bottom */
-    justify-content: center !important; /* Centers perfectly left-to-right */
+    /* Flex is key here to center the .slide-inner */
+    display: flex !important; 
+    align-items: center !important;
+    justify-content: center !important;
   }
 
-  /* This holds the image and caption. It creates the 5% white borders */
-  .slide-inner {
-    width: 90vw !important; 
-    height: auto !important;
+ .slide-inner {
+    width: 90vw !important; /* This creates your white side borders */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    padding-bottom: 60px !important; /* Pushes content up so it doesn't hit the nav */
+padding-bottom: 60px !important; 
+    box-sizing: border-box !important;
   }
 
+/* 4. CONSTRAIN THE MEDIA */
   .main-media {
     max-width: 100% !important;
-    max-height: 60vh !important;
+    /* Prevent the image from being taller than 65% of the screen */
+    max-height: 65dvh !important; 
     width: auto !important;
     height: auto !important;
-    display: block !important;
-    margin: 0 auto !important;
     object-fit: contain !important;
   }
 
@@ -256,7 +263,7 @@ html, body, * {
     width: 100% !important;
   }
 
-  /* GROUPED IMAGES ROW */
+  /* 5. FIX THE IMAGE ROW (The Photography Slide) */
   .image-row {
     display: flex !important;
     flex-direction: row !important;
