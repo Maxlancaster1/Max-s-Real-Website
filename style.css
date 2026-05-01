@@ -206,52 +206,42 @@ html, body, * {
 /* MOBILE CONTROLS */
 @media only screen and (max-width: 768px) {
 
-  /* REMOVE BLACK CURSOR DOT ON MOBILE */
-  .custom-cursor {
-    display: none !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
+  .custom-cursor { display: none !important; opacity: 0 !important; visibility: hidden !important; }
+  html, body, * { cursor: auto !important; }
+  body { overflow-x: hidden; }
+
+  /* 1. BRUTE-FORCE CENTERING */
+  .slider-wrap, .slider {
+    width: 100vw !important;
+    height: 100vh !important; /* Fallback for older phones */
+    height: 100dvh !important; /* Dynamic height for modern phones */
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  html, body, * {
-    cursor: auto !important;
-  }
-
-  body {
-    overflow-x: hidden;
-  }
-
-  /* 1. BULLETPROOF VERTICAL CENTERING */
-  .slider-wrap {
-    width: 90vw !important;
-    height: 100dvh !important; /* dvh fixes the iOS Safari address bar jump */
-    margin: 0 auto !important;
+  /* Make the slide itself a full-screen centering box */
+  .slide {
+    width: 100% !important;
+    height: 100% !important;
     display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    align-items: center !important; /* Centers perfectly top-to-bottom */
+    justify-content: center !important; /* Centers perfectly left-to-right */
   }
 
-  /* Force the inner slider boxes to stretch to full height */
-  .slider, .slide {
-    width: 100% !important;
-    height: 100% !important; 
-  }
-
+  /* This holds the image and caption. It creates the 5% white borders */
   .slide-inner {
-    width: 100% !important;
-    height: 100% !important; 
+    width: 90vw !important; 
+    height: auto !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
-    /* Pushes the image up slightly so it doesn't collide with the bottom nav */
-    padding-bottom: 80px !important; 
-    box-sizing: border-box !important;
+    padding-bottom: 60px !important; /* Pushes content up so it doesn't hit the nav */
   }
 
   .main-media {
     max-width: 100% !important;
-    max-height: 60dvh !important;
+    max-height: 60vh !important;
     width: auto !important;
     height: auto !important;
     display: block !important;
@@ -259,7 +249,6 @@ html, body, * {
     object-fit: contain !important;
   }
 
-  /* CAPTION */
   .caption {
     margin-top: 15px !important;
     font-size: 10px !important;
@@ -267,7 +256,7 @@ html, body, * {
     width: 100% !important;
   }
 
-  /* GROUPED IMAGES ROW FIX */
+  /* GROUPED IMAGES ROW */
   .image-row {
     display: flex !important;
     flex-direction: row !important;
@@ -283,21 +272,17 @@ html, body, * {
     object-fit: contain !important;
   }
 
-  /* HIDE DESKTOP SLIDE DOTS/BUTTONS ON MOBILE */
-  .side-button {
-    display: none !important;
-  }
+  .side-button { display: none !important; }
 
-  /* INFO PAGE CENTRALIZATION */
   .info-page {
+    min-height: 100vh !important;
     min-height: 100dvh !important;
     width: 90vw !important;
     margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
-    padding-bottom: 80px !important; /* Account for the bottom nav */
-    box-sizing: border-box !important;
+    padding-bottom: 80px !important; 
   }
 
   .info-text {
@@ -306,23 +291,22 @@ html, body, * {
     text-align: center !important;
   }
 
-  /* 2. BULLETPROOF FIXED BOTTOM NAV */
+  /* 2. THE FIXED NAV (Requires HTML fix above to work properly) */
   .nav, .info-nav {
     position: fixed !important;
-    /* Locks safely above the iOS swipe bar/address bar */
-    bottom: env(safe-area-inset-bottom, 25px) !important; 
+    bottom: 0 !important;
     left: 0 !important;
     width: 100vw !important;
+    height: 60px !important; /* Force a strict height */
     margin: 0 !important;
+    padding: 0 !important;
     display: flex !important;
     justify-content: center !important;
+    align-items: center !important; /* Perfectly center text vertically in the bar */
     gap: 25px !important;
-    z-index: 999999 !important; /* Ensures it is always on top */
-    background: #fff !important; /* Prevents text clashing with scrolling images */
-    padding: 15px 0 !important;
+    z-index: 999999 !important;
+    background: #fff !important; 
   }
 
-  .nav a, .info-nav a {
-    font-size: 12px !important;
-  }
+  .nav a, .info-nav a { font-size: 12px !important; }
 }
