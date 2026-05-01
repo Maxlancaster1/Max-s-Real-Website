@@ -192,97 +192,86 @@ html, body, * {
   cursor: none !important;
 }
 
-/* MOBILE */
-/* MOBILE FIX */
+/* MOBILE CONTROLS */
 @media only screen and (max-width: 768px) {
+
+  /* REMOVE BLACK CURSOR DOT ON MOBILE */
+  .custom-cursor {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
 
   html, body, * {
     cursor: auto !important;
   }
 
-  .custom-cursor {
-    display: none !important;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-  }
-
-  .container {
-    width: 100%;
-    text-align: center;
-  }
-
+  /* IMAGE POSITION + SIZE */
   .slider-wrap {
     width: 100vw !important;
-    margin: 90px auto 0 auto !important;
-    position: relative;
+
+    /* controls distance from top */
+    margin-top: 120px !important;
   }
 
-  .slider {
-    width: 100vw !important;
-    height: auto !important;
-  }
-
-  .slide {
-    width: 100vw !important;
-    height: auto !important;
-  }
-
+  .slider,
+  .slide,
   .slide-inner {
     width: 100vw !important;
     height: auto !important;
     min-height: auto !important;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  }
+
+  .slide-inner {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 
   .main-media {
+    /* controls image width */
+    max-width: 90vw !important;
+
+    /* controls image height */
+    max-height: 58vh !important;
+
     width: auto !important;
     height: auto !important;
-    max-width: 88vw !important;
-    max-height: 68vh !important;
-    object-fit: contain !important;
+
     display: block !important;
     margin: 0 auto !important;
+    object-fit: contain !important;
   }
 
-  .image-row {
-    width: 88vw !important;
-    display: flex !important;
-    gap: 10px !important;
-  }
-
-  .image-row img {
-    max-width: calc((88vw - 20px) / 3) !important;
-    max-height: 60vh !important;
-    width: auto !important;
-    height: auto !important;
-  }
-
+  /* CAPTION */
   .caption {
-    font-size: 10px !important;
     margin-top: 8px !important;
+    font-size: 10px !important;
     text-align: center !important;
   }
 
+  /* HIDE DESKTOP SLIDE DOTS/BUTTONS ON MOBILE */
+  .side-button {
+    display: none !important;
+  }
+
+  /* NAVIGATION */
   .nav {
-    width: 88vw !important;
-    margin: 28px auto 60px auto !important;
+    width: 90vw !important;
+
+    /* controls nav position */
+    margin: 70px auto 80px auto !important;
+
     display: flex !important;
     justify-content: flex-start !important;
-    gap: 22px !important;
+
+    /* controls distance between nav words */
+    gap: 28px !important;
   }
 
   .nav a {
-    font-size: 11px !important;
-  }
-
-  .side-button {
-    display: none !important;
+    /* controls nav font size */
+    font-size: 13px !important;
   }
 }
