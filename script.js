@@ -33,6 +33,9 @@ function showSlide(index) {
     activeVideo.play();
   }
 }
+document.querySelectorAll('video').forEach(video => {
+  video.muted = false;
+});
 
 function nextSlide() {
   showSlide(currentSlide + 1);
