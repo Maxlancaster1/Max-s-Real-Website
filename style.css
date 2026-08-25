@@ -115,8 +115,8 @@ body {
   transform: translateY(-50%);
   width: 8px;
   height: 8px;
-  min-width: 8px;
-  min-height: 8px;
+  min-width: 12px;
+  min-height: 12px;
   background: #000;
   border-radius: 50%;
   border: none;
@@ -134,10 +134,7 @@ body {
   left: calc(50% + 490px);
 }
 
-/* VIDEO MUTE BUTTON */
-video {
-  cursor: pointer;
-}
+
 
 /* INFO PAGE */
 .info-page {
