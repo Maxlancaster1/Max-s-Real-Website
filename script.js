@@ -42,10 +42,7 @@ function prevSlide() {
   showSlide(currentSlide - 1);
 }
 
-function toggleVideoSound(video) {
-  video.muted = !video.muted;
-  video.play();
-}
+
 
 /* MOBILE SWIPE */
 let touchStartX = 0;
